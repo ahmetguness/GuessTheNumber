@@ -5,6 +5,7 @@ import Colors from "../constants/colors";
 import Title from "../components/ui/Title";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
+import ButtonsContainer from "../components/ui/ButtonsContainer";
 
 function StartGameScreen({ onPickedNumber }) {
 
@@ -39,14 +40,10 @@ function StartGameScreen({ onPickedNumber }) {
                     onChangeText={numberInputHandler}
                     value={enteredNumber}
                 />
-                <View style={styles.buttonsContainer}>
-                    <View style={styles.buttonContainer}>
-                        <PrimaryButton onPressFunc={resetInputHandler} >Reset</PrimaryButton>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <PrimaryButton onPressFunc={confirmInputHandler} >Confirm</PrimaryButton>
-                    </View>
-                </View>
+                <ButtonsContainer
+                    button1={<PrimaryButton onPressFunc={resetInputHandler} >Reset</PrimaryButton>}
+                    button2={<PrimaryButton onPressFunc={confirmInputHandler} >Confirm</PrimaryButton>}
+                />
             </Card>
         </View>
     );
@@ -71,11 +68,5 @@ const styles = StyleSheet.create({
         color: Colors.accent500,
         marginVertical: 8,
         fontWeight: 'bold',
-    },
-    buttonsContainer: {
-        flexDirection: 'row',
-    },
-    buttonContainer: {
-        flex: 1,
     },
 });

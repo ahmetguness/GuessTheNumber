@@ -1,5 +1,4 @@
 import { Text, StyleSheet } from "react-native";
-import Colors from "../../constants/colors";
 
 function Title({ titleText }) {
     return <Text style={styles.title} >{titleText}</Text>

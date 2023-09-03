@@ -1,7 +1,7 @@
 import { Text, StyleSheet } from "react-native";
 
-function InstructionText({ children }) {
-    return <Text style={stlyes.instructionText} >{children}</Text>;
+function InstructionText({ children, style }) {
+    return <Text style={[stlyes.instructionText, style]} >{children}</Text>;
 }
 
 
@@ -11,5 +11,6 @@ const stlyes = StyleSheet.create({
     instructionText: {
         color: 'white',
         fontSize: 24,
+
     },
 });
