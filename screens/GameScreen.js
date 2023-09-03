@@ -51,7 +51,6 @@ function GameScreen({ userNumber, onGameOver }) {
         else {
             minBoundary = currentGuess + 1;
         }
-        console.log(maxBoundary, minBoundary);
         const newRndNumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess);
         setCurrentGuess(newRndNumber);
         setGuessRounds(prevGuessRounds => [newRndNumber, ...prevGuessRounds])
@@ -69,7 +68,6 @@ function GameScreen({ userNumber, onGameOver }) {
                 button2={<PrimaryButton children={<Ionicons name="md-add" size={24} color={'white'} />} onPressFunc={nextGuessHandler.bind(this, 'greater')} ></PrimaryButton>} />
         </Card>
         <View style={styles.listContainer}>
-            {/* {guessRounds.map(guessRound => <Text key={guessRound} >{guessRound}</Text>)} */}
             <FlatList data={guessRounds} renderItem={(itemData) => <GuessLogItem roundNumber={guessRoundsListLenght - itemData.index} guess={itemData.item} />} keyExtractor={(item) => item} />
         </View>
     </View>
