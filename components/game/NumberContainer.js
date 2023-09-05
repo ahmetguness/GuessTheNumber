@@ -14,6 +14,7 @@ function NumberContainer({ children }) {
 
 export default NumberContainer;
 
+
 const styles = StyleSheet.create({
     container: {
         borderWidth: 4,
